@@ -1,15 +1,12 @@
 .carousel {
+    padding-top: 50px;
+
     .carousel-inner {
         height: 720px;
     }
 
     @include background();
     .carousel-item {
-        // img {
-        //     background-repeat: no-repeat;
-        //     background-position: center;
-        //     background-size: cover;
-        // }
         .topSlider__detail {
             top: 50px;
             left: 10%;

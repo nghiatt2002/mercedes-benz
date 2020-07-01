@@ -1,0 +1,22 @@
+.container-custom {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.container-outer {
+    margin: 0 auto;
+    max-width: 1680px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1399px) {
+    .container-custom {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container-custom {
+        width: 1440px;
+    }
+}

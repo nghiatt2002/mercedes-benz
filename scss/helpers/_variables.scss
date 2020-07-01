@@ -1,0 +1,28 @@
+$color-white: #fff;
+$color-black: #000;
+$color-blue: #00adef;
+$color-gray: #e9ecef;
+$color-gray-2:#999;
+$color-dark-gray: #333;
+
+
+$bg-icon: #efefefb3;
+$bg-video: #333333ce;
+
+
+$fs-13: 13px;
+$fs-14: 14px;
+$fs-15: 15px;
+$fs-16: 16px;
+$fs-18: 18px;
+$fs-20: 20px;
+$fs-22: 22px;
+$fs-28: 28px;
+
+// responsive
+$breakpoints:(
+    'extra-large': 1199px,
+    'large' : 992px,
+    'medium' : 768px,
+    'small' : 576px,
+)

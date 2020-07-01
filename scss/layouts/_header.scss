@@ -1,0 +1,205 @@
+header {
+    height: 105px;
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    background-color: $color-black;
+    margin-bottom: 100px;
+    .header__content {
+        .header__detail {
+            .menu1 {
+                padding-top: 5px;
+                list-style: none;
+                .menu1__item {
+                    margin: 0 10px;
+                    .menu1__link {
+                        color: $color-white;
+                        text-decoration: none;
+                        line-height: 24px;
+                        i {
+                            font-size: 10px;
+                            padding: 2px 5px;
+                            border: 1px solid $color-white;
+                        }
+                    }
+                    &:hover {
+                        .menu1__link {
+                            color: $color-blue;
+                            i {border-color: $color-blue;}
+                        }
+                    }
+                }
+                .item3 {margin-left: 15px;}
+            }
+        }
+
+        .header__navbar {
+            margin-top: 30px;
+            .header__logo {
+                .logo1 {
+                    position: absolute;
+                    left: 19px;
+                    bottom: 10px;
+                }
+                .logo2 {
+                    position: absolute;
+                    bottom: 12px;
+                    left: 140px;
+                }
+            }
+    
+            .navbar-toggler {
+                #btnCloseMenu {
+                    display: none;
+                }
+            }
+    
+            .menu2 {
+                background-color: $color-black;
+                .navbar-nav {
+                    .nav-item {
+                        margin: 0 10px;
+                        .nav-link {color: $color-white;}
+                        &:hover {
+                            .nav-link {color: $color-blue;}
+                            .nav-link--search {color: $color-white;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        .header__content {
+            .header__detail {
+                .menu1 {
+                    .item1 {span {display: none;}}
+                    .item2 {display: none;}
+                    .item3 {margin-left: 0;}
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    header {
+        height: 80px;
+        .header__content {
+            .header__navbar {
+                margin-top: 0;
+                justify-content: flex-end;
+                .header__logo {
+                    position: absolute;
+                    top: 20px;
+                    left: 0;
+                    .logo1 {
+                        left: 19px;
+                        width: 44px;
+                        height: 44px;
+                    }
+                    .logo2 {
+                        bottom: 12px;
+                        left: 102px;
+                        height: 23px;
+                    }
+                }
+    
+                .navbar-iconSearch {
+                    color: $color-white;
+                    margin-right: 15px;
+                    font-size: $fs-20;
+                    &:hover {
+                        color: $color-blue;
+                        .fab {font-weight: 400;}
+                    }
+                    .fab {font-weight: 600;}
+                }
+                .navbar-toggler {
+                    margin-right: 10px;
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    font-size: $fs-20;
+                    &:hover {
+                        .fa {color: $color-blue;}
+                    }
+                    .fa {color: $color-white;}
+                }
+        
+                .menu2 {
+                    height: 100vh;
+                    opacity: 1;
+                    z-index: 1000;
+                    width: 100%;
+                    transition: height 0.3s ease-out, opacity 0.3s;
+                    .navbar-nav {
+                        text-align: center;
+                        margin: 55px 0 0;
+                        .nav-item {
+                            .nav-link {font-size: $fs-22;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    header {
+        .header__content {
+            .header__navbar {
+                justify-content: flex-end;
+                .header__logo {
+                    position: absolute;
+                    top: 25px;
+                    left: 0;
+                }
+    
+                .navbar-iconSearch {
+                    color: $color-white;
+                    margin-right: 15px;
+                    font-size: $fs-20;
+                    &:hover {
+                        color: $color-blue;
+                        .fab {font-weight: 400;}
+                    }
+                    .fab {font-weight: 600;}
+                }
+                
+                .navbar-toggler {
+                    margin-right: 10px;
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    font-size: $fs-20;
+                    &:hover {
+                        .fa {color: $color-blue;}
+                    }
+                    .fa {color: $color-white;}
+                }
+        
+                .menu2 {
+                    height: 100vh;
+                    opacity: 1;
+                    z-index: 1000;
+                    width: 100%;
+                    transition: height 0.3s ease-out, opacity 0.3s;
+                    .navbar-nav {
+                        text-align: center;
+                        margin: 55px 0 0;
+                        .nav-item {
+                            .nav-link {font-size: $fs-22;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

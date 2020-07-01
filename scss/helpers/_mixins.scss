@@ -1,0 +1,35 @@
+@mixin textStyle($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+
+@mixin background() {
+    $num: 1;
+    $fileName: 'carousel';
+    $extendtion: '.jpeg';
+    @for $num from 1 to 7 {
+        .carousel-item.slide-#{$num}{
+            background-image: url(../img/#{$fileName}#{$num}#{$extendtion});
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+        }
+        $num:$num + 1;
+    }
+}
+
+
+@mixin responsive($screen) {
+    @if map-has-key($map:$breakpoints , $key:$screen ){
+        $value: map-get($map:$breakpoints , $key:$screen );
+        @media screen and (max-width:$value) {
+            @content;
+        }
+    }
+    @else{
+        @warn "Nhap lai di";
+    }
+}
+

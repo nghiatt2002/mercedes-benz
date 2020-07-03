@@ -40,7 +40,12 @@ getElement("btnSignUp").addEventListener("click", function() {
     } else {
         getElement("email-error").style.display = "none";
     }
+});
 
+$(".nav-item").click(function(e) {
+    // active menu click
+    $("li").removeClass("active");
+    $(this).addClass("active");
 });
 
 /**
@@ -84,4 +89,8 @@ window.onscroll = function() {
     }
     prevScroll = currScroll;
 }
+
+AOS.init({
+    duration: 1500,
+});
 

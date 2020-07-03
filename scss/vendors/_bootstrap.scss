@@ -1,8 +1,31 @@
+#exampleModal {
+    z-index: 10150;
+}
+
 .modal-dialog {
     .modal-content {
         border-radius: 0;
         .modal-header {
             border-bottom: none;
+            height: 50px;
+            .close {
+                color: $color-black;
+                opacity: 1;
+                font-size: 2rem;
+
+                background: none;
+                border: none;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                margin: 0;
+                padding: 0;
+
+                &:active,
+                &:hover {
+                    color: $color-blue;
+                }
+            }
         }
         .modal-body {
             padding: 0 2rem;

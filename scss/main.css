@@ -1,10 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Helvetica");
+#exampleModal {
+  z-index: 10150;
+}
+
 .modal-dialog .modal-content {
   border-radius: 0;
 }
 
 .modal-dialog .modal-content .modal-header {
   border-bottom: none;
+  height: 50px;
+}
+
+.modal-dialog .modal-content .modal-header .close {
+  color: #000;
+  opacity: 1;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-dialog .modal-content .modal-header .close:active, .modal-dialog .modal-content .modal-header .close:hover {
+  color: #00adef;
 }
 
 .modal-dialog .modal-content .modal-body {
@@ -102,7 +124,7 @@ html, body {
 header {
   height: 105px;
   position: fixed;
-  z-index: 99999;
+  z-index: 9999;
   width: 100%;
   background-color: #000;
   margin-bottom: 100px;
@@ -179,6 +201,10 @@ header .header__content .header__navbar .menu2 .navbar-nav .nav-item:hover .nav-
 
 header .header__content .header__navbar .menu2 .navbar-nav .nav-item:hover .nav-link--search {
   color: #fff;
+}
+
+header .header__content .header__navbar .menu2 .navbar-nav .active .nav-link {
+  color: #00adef;
 }
 
 @media screen and (max-width: 767px) {
@@ -1034,18 +1060,22 @@ footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-gro
 
 footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-group #email::-webkit-input-placeholder {
   color: #fff;
+  font-style: italic;
 }
 
 footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-group #email:-ms-input-placeholder {
   color: #fff;
+  font-style: italic;
 }
 
 footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-group #email::-ms-input-placeholder {
   color: #fff;
+  font-style: italic;
 }
 
 footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-group #email::placeholder {
   color: #fff;
+  font-style: italic;
 }
 
 footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-group #email:focus {
@@ -1081,6 +1111,8 @@ footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-gro
   border-bottom: 1px solid #171717;
   border-left: 1px solid #000;
   outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 footer .footer__content .footer__stay .footer__stayLeft .footer__form .input-group #btnSignUp i {

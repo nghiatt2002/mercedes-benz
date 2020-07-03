@@ -49,6 +49,7 @@ footer {
                             width: 60%;
                             &::placeholder {
                                 color: $color-white;
+                                font-style: italic;
                             }
                             &:focus {
                                 border: 1px solid #5c5c5c;
@@ -77,6 +78,7 @@ footer {
                                 border-bottom: 1px solid #171717;
                                 border-left: 1px solid $color-black;
                                 outline: none;
+                                box-shadow: none;
                             }
                             i {
                                 font-size: 15px;

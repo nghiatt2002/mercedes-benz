@@ -1,14 +1,18 @@
 $color-white: #fff;
 $color-black: #000;
+$color-red-error: #9f0002;
 $color-blue: #00adef;
+$color-blue-active: #0088c6;
+$color-blue-disable: #4dc6f4;
 $color-gray: #e9ecef;
 $color-gray-2:#999;
+$color-gray-3: #636363;
 $color-dark-gray: #333;
-
+$color-line: rgba(255, 255, 255, 0.4);
+$color-2a: #2a2a2a;
 
 $bg-icon: #efefefb3;
 $bg-video: #333333ce;
-
 
 $fs-13: 13px;
 $fs-14: 14px;
@@ -18,11 +22,3 @@ $fs-18: 18px;
 $fs-20: 20px;
 $fs-22: 22px;
 $fs-28: 28px;
-
-// responsive
-$breakpoints:(
-    'extra-large': 1199px,
-    'large' : 992px,
-    'medium' : 768px,
-    'small' : 576px,
-)

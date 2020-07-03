@@ -1,0 +1,278 @@
+footer {
+    margin-top: 50px;
+    .footer__content {
+        padding: 0 45px;
+        .footer__col {
+            padding: 0;
+            .footer__colTitle {
+                font-size: 30px;
+                font-weight: 400;
+                line-height: 35px;
+                margin-bottom: 25px;
+                margin-top: 30px;
+            }
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    &:hover {
+                        a {color: $color-blue;}
+                    }
+                    a {
+                        font-size: 13px;
+                        color: $color-line;
+                        text-decoration: none;
+                        transition: color 0.5s;
+                    }
+                }
+                
+            }
+        }
+        .footer__stay {
+            padding: 0;
+            margin-top: 50px;
+            p, label {
+                font-size: 13px;
+                color: $color-line;
+            }
+            .footer__stayLeft {
+                .footer__form {
+                    .input-group {
+                        #email {
+                            outline: none;
+                            color: $color-white;
+                            background: $color-2a;
+                            border: 1px solid $color-2a;
+                            padding: 5px 15px;
+                            font-size: 20px;
+                            width: 60%;
+                            &::placeholder {
+                                color: $color-white;
+                            }
+                            &:focus {
+                                border: 1px solid #5c5c5c;
+                                box-shadow: none;
+                            }
+                        }
+                        #btnSignUp {
+                            width: 25%;
+                            font-size: 13px;
+                            text-align: left;
+                            padding: 5px 15px;
+                            color: $color-line;
+                            border-radius: 0;
+                            border-top: 1px solid #242424;
+                            border-right: 1px solid #0b0b0b;
+                            border-bottom: 1px solid #0b0b0b;
+                            border-left: 1px solid $color-2a;
+                            background: linear-gradient(#242424,#0b0b0b);
+                            &:hover {
+                                color: $color-blue;
+                            }
+                            &:active {
+                                background: linear-gradient(#171717,#101010);
+                                border-top: 1px solid $color-black;
+                                border-right: 1px solid #171717;
+                                border-bottom: 1px solid #171717;
+                                border-left: 1px solid $color-black;
+                                outline: none;
+                            }
+                            i {
+                                font-size: 15px;
+                                color: $color-line !important;
+                            }
+                        }
+                    }
+                    #email-error {
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: $color-red-error;
+                        margin: 5px 0;
+                        display: none;
+                    }
+                    .form-check {
+                        margin-top: 15px;
+                        padding-left: 0;
+                        cursor: pointer;
+                        .chkContainer {
+                            .form-check-label {
+                                cursor: pointer;
+                                .lbChkAgree {
+                                    &:hover {
+                                        color: $color-blue;
+                                    }
+                                    color: $color-white;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                        #accept-error {
+                            font-size: 13px;
+                            font-weight: 600;
+                            color: $color-red-error;
+                            display: none;
+                        }
+                    }
+                }
+                
+            }
+            .footer__stayRight {
+                padding: 0;
+                .listIcon {
+                    position: relative;
+                    display: block;
+                    list-style: none;
+                    margin: -15px -25px;
+                    padding: 0;
+                    li {
+                        float: left;
+                        width: 30px;
+                        height: 30px;
+                        margin: 15px 25px;
+                        text-align: center;
+                        .fab {
+                            font-size: $fs-20;
+                            color: $color-gray-2;
+                            text-decoration: none;
+                            transition: color 0.2s;
+                            &:hover {
+                                color: $color-blue;
+                            }
+                        }
+                    }
+                }
+                
+                .icon1 {
+                    padding-left: 0;
+                }
+            }
+        }
+        .footer__relateWebsite {
+            padding: 0;
+            .relateWebsiteItem {
+                padding: 30px;
+                img {
+                    height: 30px;
+                    width: 100%;
+                }
+            }
+        }
+        .footer__info {
+            padding: 0;
+            font-size: $fs-13;
+            color: $color-gray-2;
+            a {
+                color: $color-white;
+                text-decoration: none;
+                &:hover {
+                    color: $color-blue;
+                }
+            }
+        }
+        .footer__languageAndMenu {
+            padding: 0;
+            margin: 50px 0 10px;
+            .footer__language {
+                .language {
+                    display: block;
+                    list-style: none;
+                    .language__item {
+                        display: inline-block;
+                        a {
+                            color: white;
+                            font-size: $fs-16;
+                            text-decoration: none;
+                        }
+                        .deutsch {
+                            color: $color-blue-disable;
+                            &::after {
+                                content: "";
+                                position: relative;
+                                display: inline-block;
+                                background-color: $color-blue-disable;
+                                top: 1px;
+                                width: 1px;
+                                height: 11px;
+                                margin: 0 15px;
+                            }
+                            &:hover {
+                                color: $color-blue-active;
+                            }
+                        }
+                        .english {
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+            .footer__menu {
+                .footer__menuList {
+                    list-style: none;
+                    li {
+                        float: right;
+                        margin: 0 10px;
+                        &:hover {
+                            a {
+                                color: $color-blue;
+                            }
+                        }
+                        a {
+                            font-size: $fs-13;
+                            color: $color-gray-3;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .footer__backToTop {
+                text-align: right;
+                a {
+                    font-size: $fs-13;
+                    color: $color-gray-3;
+                    text-decoration: none;
+                    i {
+                        font-size: $fs-18;
+                        margin-left: 5px;
+                    }
+                    &:hover {
+                        color: $color-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    footer {
+        .footer__content {
+            .footer__stay {
+                .footer__stayLeft {
+                    .footer__form {
+                        .input-group {
+                            #email {
+                                width: 70%;
+                            }
+                            #btnSignUp {
+                                width: 30%;
+                            }
+                        }
+                    }
+                }
+                .footer__stayRight {
+                    padding: 10px 15px;
+                }
+            }
+            .footer__languageAndMenu {
+                .footer__menu {
+                    .footer__menuList {
+                        li {
+                            float: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

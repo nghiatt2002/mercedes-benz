@@ -1,0 +1,23 @@
+.line {
+    &::before {
+        content: "";
+        background: $color-white;
+        display: block;
+        height: 2px;
+        margin-bottom: 25px;
+        margin-top: 0;
+        width: 60px;
+    }
+}
+
+.line-transparent {
+    &::before {
+        content: "";
+        background: transparent;
+        display: block;
+        height: 2px;
+        margin-bottom: 25px;
+        margin-top: 0;
+        width: 60px;
+    }
+}

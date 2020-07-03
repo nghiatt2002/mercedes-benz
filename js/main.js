@@ -1,40 +1,31 @@
-function getElement(id) {
-    return document.getElementById(id);
-}
+(function(){
+    // Back to Top - by CodyHouse.co
+	var backTop = document.getElementsByClassName('js-cd-top')[0],
+		offset = 300, // browser window scroll (in pixels) after which the "back to top" link is shown
+		offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		scrollDuration = 700,
+		scrolling = false;
 
-getElement("btnToggleMenu").addEventListener("click", function() {
-    getElement("btnCloseMenu").style.display = "block";
-    this.style.display = "none";
-});
+	if( backTop ) {
+		//update back to top visibility on scrolling
+		window.addEventListener("scroll", function(event) {
+			if( !scrolling ) {
+				scrolling = true;
+				(!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 250) : window.requestAnimationFrame(checkBackToTop);
+			}
+		});
 
-getElement("btnCloseMenu").addEventListener("click", function() {
-    getElement("btnToggleMenu").style.display = "block";
-    this.style.display = "none";
-});
+		//smooth scroll to top
+		backTop.addEventListener('click', function(event) {
+			event.preventDefault();
+			(!window.requestAnimationFrame) ? window.scrollTo(0, 0) : Util.scrollTo(0, scrollDuration);
+		});
+	}
 
-getElement("btnShowMore").addEventListener("click", function() {
-    getElement("divShowMore").style.display = 'none';
-
-    // show items hide
-    var listItems = document.getElementsByClassName('item__hide');
-    for (var i = 0; i < listItems.length; i++) {
-        listItems[i].style.display = 'block';
-    }
-});
-
-
-// Hide navbar on scroll
-var prevScroll = window.scrollY;
-window.onscroll = function() {
-    var currScroll = window.scrollY;
-    if (currScroll > prevScroll) {
-        getElement('header').style.transform = 'translateY(-100px)';
-        getElement('header').style.transition = 'transform 1s';
-        getElement('header').style.transitionDelay = '1s';
-    } else {
-        getElement('header').style.transform = 'translateY(0px)';
-        getElement('header').style.transition = 'transform 1s';
-        getElement('header').style.transitionDelay = '1s';
-    }
-    prevScroll = currScroll;
-}
+	function checkBackToTop() {
+		var windowTop = window.scrollY || document.documentElement.scrollTop;
+		( windowTop > offset ) ? Util.addClass(backTop, 'cd-top--is-visible') : Util.removeClass(backTop, 'cd-top--is-visible cd-top--fade-out');
+		( windowTop > offsetOpacity ) && Util.addClass(backTop, 'cd-top--fade-out');
+		scrolling = false;
+	}
+})();

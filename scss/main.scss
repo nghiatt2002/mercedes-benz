@@ -16,10 +16,15 @@
 @import './layouts/welcome';
 @import './layouts/channel';
 @import './layouts/category';
+@import './layouts/info';
 @import './layouts/menuRight';
+@import './layouts/footer';
 
 // pages
 
 // components
+@import './components/line';
+@import './components/lineHr';
+@import './components/checkbox';
 
 // theme

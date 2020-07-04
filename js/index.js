@@ -1,6 +1,6 @@
 const PATTERN_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-function getElement(id) {
+var getElement = function(id) {
     return document.getElementById(id);
 }
 
@@ -42,7 +42,14 @@ getElement("btnSignUp").addEventListener("click", function() {
     }
 });
 
-$(".nav-item").click(function(e) {
+getElement("backToTop").addEventListener("click", function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+})
+
+/**
+ * Click top menu
+ */
+$(".nav-item").click(function() {
     // active menu click
     $("li").removeClass("active");
     $(this).addClass("active");
@@ -56,7 +63,6 @@ var isEmpty = function(inputVal) {
     if (inputVal.trim() == "") {
         return false;
     }
-
     return true;
 }
 
@@ -69,12 +75,13 @@ var checkEmail = function(inputVal) {
     if (inputVal.match(PATTERN_EMAIL)) {
         return true;
     }
-
     return false;
 }
 
 
-// Hide navbar on scroll
+/**
+ * Hide navbar on scroll
+ */
 var prevScroll = window.scrollY;
 window.onscroll = function() {
     var currScroll = window.scrollY;

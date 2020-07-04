@@ -90,12 +90,18 @@ header, section, footer, aside, nav, main, article, figure {
 }
 
 html, body {
-  font-family: 'Work Sans', sans-serif;
   color: #fff;
   font-size: 16px;
   font-weight: 400;
   background-color: black;
   scroll-behavior: smooth;
+}
+
+@font-face {
+  html, body {
+    font-family: Mercedes Benz;
+    src: url(../../fonts/MercedesBenzLogoFont.ttf);
+  }
 }
 
 .container-custom {
@@ -127,7 +133,6 @@ header {
   z-index: 9999;
   width: 100%;
   background-color: #000;
-  margin-bottom: 100px;
 }
 
 header .header__content .header__detail .menu1 {
@@ -404,14 +409,9 @@ header .header__content .header__navbar .menu2 .navbar-nav .active .nav-link {
   font-weight: 100;
   line-height: 44px;
   width: 45%;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
-  -webkit-animation: animateCaption 1s linear 0s;
-          animation: animateCaption 1s linear 0s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  margin-bottom: 0;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .carousel .carousel-item .topSlider__detail .toggleCaption::before {
@@ -424,14 +424,35 @@ header .header__content .header__navbar .menu2 .navbar-nav .active .nav-link {
   width: 60px;
 }
 
+.carousel .carousel-item .topSlider__detail .captionTextDark {
+  color: #000;
+}
+
+.carousel .carousel-item .topSlider__detail .captionTextDark::before {
+  background: #000;
+}
+
 .carousel .carousel-item .topSlider__detail .toggleButton {
   margin-top: 25px;
-  -webkit-animation: animateButton 1s linear 1s;
-          animation: animateButton 1s linear 1s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.carousel .carousel-item .topSlider__detail .toggleDetail {
+  font-size: 13px;
+  position: absolute;
+  width: 45%;
+  text-align: left;
+  margin-top: 25px;
+  padding-left: 15px;
+  left: 0;
+  bottom: 0;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.carousel .carousel-item .topSlider__detail .toggleDark {
+  color: #000;
 }
 
 .carousel .carousel__search {
@@ -467,58 +488,6 @@ header .header__content .header__navbar .menu2 .navbar-nav .active .nav-link {
 .carousel .carousel-control-next .fa {
   font-size: 38px;
   color: #fff;
-}
-
-/* animation */
-@-webkit-keyframes animateCaption {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@keyframes animateCaption {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes animateButton {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1 !important;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes animateButton {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1 !important;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
 }
 
 .welcome .welcome__content {
@@ -962,7 +931,7 @@ header .header__content .header__navbar .menu2 .navbar-nav .active .nav-link {
 
 .verticalMenu #menuRight {
   position: fixed;
-  z-index: 999999;
+  z-index: 10000;
   top: 35%;
   left: 100%;
   width: 300px;
@@ -998,6 +967,55 @@ header .header__content .header__navbar .menu2 .navbar-nav .active .nav-link {
 .verticalMenu #menuRight .menuRight__inner .menuRight__item .menuRight__link .menuRight__icon {
   font-size: 20px;
   margin: 0 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .verticalMenu #menuRight {
+    top: unset;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    -webkit-transform: none;
+            transform: none;
+    padding: 2px 2px 0 2px;
+    background-color: #000;
+  }
+  .verticalMenu #menuRight .menuRight__inner {
+    width: 100%;
+  }
+  .verticalMenu #menuRight .menuRight__inner .menuRight__item {
+    float: left;
+    width: calc(25% - 2px);
+    height: 59px;
+    -webkit-transition: none;
+    transition: none;
+    margin: 0 1px;
+    background-color: #1f1f1f;
+  }
+  .verticalMenu #menuRight .menuRight__inner .menuRight__item:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .verticalMenu #menuRight .menuRight__inner .menuRight__item .menuRight__link {
+    display: block;
+    text-align: center;
+  }
+  .verticalMenu #menuRight .menuRight__inner .menuRight__item .menuRight__link .menuRight__icon {
+    display: block;
+    font-size: 20px;
+    margin: 0 10px;
+    font-size: 22px;
+  }
+  .verticalMenu #menuRight .menuRight__inner .menuRight__item .menuRight__link .menuRight__label {
+    font-size: 11px;
+  }
+  .verticalMenu #menuRight .menuRight__inner .item--first {
+    border-top-left-radius: 3px;
+  }
+  .verticalMenu #menuRight .menuRight__inner .item--last {
+    border-top-right-radius: 3px;
+  }
 }
 
 footer {
@@ -1284,18 +1302,18 @@ footer .footer__content .footer__languageAndMenu .footer__backToTop {
   text-align: right;
 }
 
-footer .footer__content .footer__languageAndMenu .footer__backToTop a {
+footer .footer__content .footer__languageAndMenu .footer__backToTop .backToTop {
   font-size: 13px;
   color: #636363;
   text-decoration: none;
 }
 
-footer .footer__content .footer__languageAndMenu .footer__backToTop a i {
+footer .footer__content .footer__languageAndMenu .footer__backToTop .backToTop i {
   font-size: 18px;
   margin-left: 5px;
 }
 
-footer .footer__content .footer__languageAndMenu .footer__backToTop a:hover {
+footer .footer__content .footer__languageAndMenu .footer__backToTop .backToTop:hover {
   color: #00adef;
 }
 

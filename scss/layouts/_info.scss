@@ -5,9 +5,24 @@
         p, span {
             font-size: 13px;
         }
-        .spacer {
-            display: inline-block;
-            width: 20px;
+        .info__fuel {
+            margin-bottom: 30px;
+            .spacer {
+                display: inline-block;
+                width: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .info {
+        .info__content {
+            .info__fuel {
+                .spacer {
+                    width: 35px;
+                }
+            }
         }
     }
 }

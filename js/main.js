@@ -1,31 +1,103 @@
-(function(){
-    // Back to Top - by CodyHouse.co
-	var backTop = document.getElementsByClassName('js-cd-top')[0],
-		offset = 300, // browser window scroll (in pixels) after which the "back to top" link is shown
-		offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-		scrollDuration = 700,
-		scrolling = false;
+const PATTERN_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-	if( backTop ) {
-		//update back to top visibility on scrolling
-		window.addEventListener("scroll", function(event) {
-			if( !scrolling ) {
-				scrolling = true;
-				(!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 250) : window.requestAnimationFrame(checkBackToTop);
-			}
-		});
+var getElement = function(id) {
+    return document.getElementById(id);
+}
 
-		//smooth scroll to top
-		backTop.addEventListener('click', function(event) {
-			event.preventDefault();
-			(!window.requestAnimationFrame) ? window.scrollTo(0, 0) : Util.scrollTo(0, scrollDuration);
-		});
-	}
+getElement("btnToggleMenu").addEventListener("click", function() {
+    getElement("btnCloseMenu").style.display = "block";
+    this.style.display = "none";
+});
 
-	function checkBackToTop() {
-		var windowTop = window.scrollY || document.documentElement.scrollTop;
-		( windowTop > offset ) ? Util.addClass(backTop, 'cd-top--is-visible') : Util.removeClass(backTop, 'cd-top--is-visible cd-top--fade-out');
-		( windowTop > offsetOpacity ) && Util.addClass(backTop, 'cd-top--fade-out');
-		scrolling = false;
-	}
-})();
+getElement("btnCloseMenu").addEventListener("click", function() {
+    getElement("btnToggleMenu").style.display = "block";
+    this.style.display = "none";
+});
+
+getElement("btnShowMore").addEventListener("click", function() {
+    getElement("divShowMore").style.display = 'none';
+
+    // show items hide
+    var listItems = document.getElementsByClassName('item__hide');
+    for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.display = 'block';
+    }
+});
+
+getElement("btnSignUp").addEventListener("click", function() {
+    var email = getElement("email").value;
+    var check = getElement("chkAgree").checked;
+
+    if (!check) {
+        getElement("accept-error").style.display = "block";
+    } else {
+        getElement("accept-error").style.display = "none";
+    }
+
+    if (!isEmpty(email) || !checkEmail(email)) {
+        getElement("email-error").style.display = "block";
+        getElement("email").focus();
+    } else {
+        getElement("email-error").style.display = "none";
+    }
+});
+
+getElement("backToTop").addEventListener("click", function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+/**
+ * Click top menu
+ */
+$(".nav-item").click(function() {
+    // active menu click
+    $("li").removeClass("active");
+    $(this).addClass("active");
+});
+
+/**
+ * check empty
+ * @param inputVal
+ */
+var isEmpty = function(inputVal) {
+    if (inputVal.trim() == "") {
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 
+ * @param inputVal
+ */
+var checkEmail = function(inputVal) {
+    // Check email is valid
+    if (inputVal.match(PATTERN_EMAIL)) {
+        return true;
+    }
+    return false;
+}
+
+
+/**
+ * Hide navbar on scroll
+ */
+var prevScroll = window.scrollY;
+window.onscroll = function() {
+    var currScroll = window.scrollY;
+    if (currScroll > prevScroll) {
+        getElement('header').style.transform = 'translateY(-100px)';
+        getElement('header').style.transition = 'transform 1s';
+        getElement('header').style.transitionDelay = '1s';
+    } else {
+        getElement('header').style.transform = 'translateY(0px)';
+        getElement('header').style.transition = 'transform 1s';
+        getElement('header').style.transitionDelay = '1s';
+    }
+    prevScroll = currScroll;
+}
+
+AOS.init({
+    duration: 1500,
+});
+

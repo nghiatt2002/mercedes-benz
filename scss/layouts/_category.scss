@@ -33,6 +33,7 @@
 
     .tab-content {
         .category__content {
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(4,1fr);
             grid-gap: 2px;
@@ -40,6 +41,7 @@
             .category__item {
                 position: relative;
                 color: white;
+                width: 100%;
                 &:hover {
                     .category__icon {
                         opacity: 0;
@@ -178,10 +180,26 @@
     .category {
         .tab-content {
             .category__content {
+                display: block;
                 grid-template-columns: repeat(1,1fr);
                 .category__item {
                     grid-column: 1;
-
+                    &:hover {
+                        .category__icon {
+                            opacity: 1;
+                        }
+                        .category__text {
+                            height: 48%;
+                            .title {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            .decription {
+                                display: none;
+                            }
+                        }
+                    }
                     .category__text {
                         position: initial;
                         padding: 20px 30px;
@@ -199,6 +217,9 @@
                     .category__icon {
                         bottom: 66px;
                         opacity: 1 !important;
+                    }
+                    .category__fuel {
+                        opacity: 0;
                     }
                 }
                 .item__large {

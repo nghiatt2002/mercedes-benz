@@ -37,6 +37,9 @@
             .toggleButton {
                 margin-top: 25px;
                 animation-delay: 2s;
+                .topSlider__link {
+                    border-radius: 0;
+                }
             }
             .toggleDetail {
                 font-size: $fs-13;
@@ -79,10 +82,25 @@
     }
     .carousel-control-prev,
     .carousel-control-next {
-        width: 5%;
+        width: 10%;
         .fa {
             font-size: 38px;
             color: $color-white;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .carousel {
+        .carousel-item {
+            .topSlider__detail {
+                .toggleCaption {
+                    width: 90%;
+                }
+                .toggleDetail {
+                    width: 90%;
+                }
+            }
         }
     }
 }

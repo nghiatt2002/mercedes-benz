@@ -1,21 +1,21 @@
 .carousel {
-    padding-top: 50px;
+    padding-top: 55px;
 
-    .carousel-inner {
-        height: 720px;
-    }
-
-    @include background();
     .carousel-item {
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
         .topSlider__detail {
             top: 50px;
             left: 10%;
             text-align: left;
             .toggleCaption {
-                font-size: 40px;
+                font-size: 35px;
                 font-weight: 100;
                 line-height: 44px;
-                width: 45%;
+                width: 70%;
                 margin-bottom: 0;
                 animation-delay: 1s;
                 &::before {
@@ -39,6 +39,7 @@
                 animation-delay: 2s;
                 .topSlider__link {
                     border-radius: 0;
+                    padding: 7px 20px 6px;
                 }
             }
             .toggleDetail {
@@ -47,7 +48,6 @@
                 width: 45%;
                 text-align: left;
                 margin-top: 25px;
-                padding-left: 15px;
                 left: 0;
                 bottom: 0;
                 animation-delay: 2s;
@@ -90,15 +90,127 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (max-width: 767px) {
     .carousel {
+        padding-top: 40px;
         .carousel-item {
+            .carousel-caption {
+                position: inherit;
+                height: 380px;
+                background-color: $color-white;
+            }
             .topSlider__detail {
+                top: 0;
+                left: 0;
+                color: $color-black;
+                padding-left: 40px;
+                .toggleButton {
+                    margin-top: 20px;
+                }
                 .toggleCaption {
                     width: 90%;
+                    font-size: $fs-28;
+                    line-height: $fs-28;
+                    margin-top: 10px;
+                    &::before {
+                        background-color: $color-black;
+                    }
                 }
                 .toggleDetail {
                     width: 90%;
+                    bottom: 50px;
+                    left: 40px;
+                }
+            }
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10%;
+            height: 250px;
+            top: 40px;
+            .fa {
+                font-size: 24px;
+                color: $color-white;
+            }
+        }
+        .carousel__search {
+            padding: 20px 0;
+            .input-group {
+                padding: 0;
+                max-width: 90%;
+                .form-control {
+                    box-shadow: none;
+                    border-color: $color-white;
+                    border-radius: 0;
+                    padding: 5px 10px;
+                    background-clip: unset;
+                }
+                .input-group-append {
+                    .input-group-text {
+                        background-color: $color-white;
+                        border-color: $color-white;
+                        border-radius: 0;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel {
+        .carousel-item {
+            .topSlider__detail {
+                top: 0;
+                left: 90px;
+
+                .toggleCaption {
+                    width: 90%;
+                    font-size: $fs-28;
+                    line-height: $fs-28;
+                }
+                .toggleButton {
+                    margin-top: 15px;
+                    .topSlider__link {
+                        padding: 5px 10px;
+                    }
+                }
+                .toggleDetail {
+                    width: 90%;
+                    bottom: -10px;
+                    left: 0;
+                }
+            }
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 12%;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .carousel {
+        .carousel-item {
+            .topSlider__detail {
+                top: 20px;
+                left: 100px;
+
+                .toggleCaption {
+                    width: 90%;
+                    font-size: $fs-30;
+                    line-height: $fs-30;
+                }
+                .toggleButton {
+                    margin-top: 25px;
+                }
+                .toggleDetail {
+                    width: 90%;
+                    bottom: -10px;
+                    left: 0;
                 }
             }
         }

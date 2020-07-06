@@ -10,12 +10,10 @@ header, section, footer, aside, nav, main, article, figure {
 }
 
 html, body {
-    // font-family: MBCorpo Title,DaimlerCAC-Regular,Helvetica,Arial,sans-serif;
     @font-face {
         font-family: Mercedes Benz;
         src: url(../../fonts/MercedesBenzLogoFont.ttf);
     }
-    // font-family: 'Work Sans', sans-serif;
     @include textStyle(#fff, 16px, 400);
     background-color: black;
     scroll-behavior: smooth;

@@ -6,7 +6,6 @@
 @import './vendors/bootstrap';
 
 // base
-@import url('https://fonts.googleapis.com/css?family=Helvetica');
 @import './base/reset';
 @import './base/customize';
 
@@ -20,11 +19,7 @@
 @import './layouts/menuRight';
 @import './layouts/footer';
 
-// pages
-
 // components
 @import './components/line';
 @import './components/lineHr';
 @import './components/checkbox';
-
-// theme

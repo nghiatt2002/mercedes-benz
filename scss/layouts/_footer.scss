@@ -246,6 +246,19 @@ footer {
     }
 }
 
+@media screen and (max-width: 767px) {
+    footer {
+        .footer__content {
+            .footer__languageAndMenu {
+                padding: 20px 0 60px;
+                .footer__language {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1200px) {
     footer {
         .footer__content {
